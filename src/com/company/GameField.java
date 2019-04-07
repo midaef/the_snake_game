@@ -4,10 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameField extends JPanel implements ActionListener {
-    private final int sizeGrid = 320;
+    private final int sizeGrid = 305;
     private final int dotSize = 16;
     private final int allDots = 400;
     private Image snakeHead;
@@ -32,6 +34,8 @@ public class GameField extends JPanel implements ActionListener {
         loadImageSnakeHead();
         loadImageApple();
         initGame();
+        addKeyListener(new FieldKeyListener());
+        setFocusable(true);
     }
 
     public void initGame() {
@@ -50,8 +54,8 @@ public class GameField extends JPanel implements ActionListener {
     }
 
     public void createApple() {
-        appleX = new Random().nextInt(20) * dotSize;
-        appleY = new Random().nextInt(20) * dotSize;
+        appleX = new Random().nextInt(18) * dotSize + dotSize;
+        appleY = new Random().nextInt(18) * dotSize + dotSize;
     }
 
     public void loadImageSnakeHead() {
@@ -106,11 +110,69 @@ public class GameField extends JPanel implements ActionListener {
         }
     }
 
+    public void checkApple() {
+        if (x[0] == appleX && y[0] == appleY) {
+            dots++;
+            createApple();
+        }
+    }
+
+    public void checkCollisions() {
+        for (int i = dots; i > 0; i--) {
+            if (i > 4 && x[0] == x[i] && y[0] == y[i]) {
+                inGame = false;
+            }
+        }
+        if (x[0] > sizeGrid) {
+            inGame = false;
+        }
+        if (x[0] < 0) {
+            inGame = false;
+        }
+        if (y[0] > sizeGrid) {
+            inGame = false;
+        }
+        if (y[0] < 0) {
+            inGame = false;
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (inGame) {
+            checkApple();
             moveSnake();
+            checkCollisions();
         }
         repaint();
     }
+
+    class FieldKeyListener extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            super.keyPressed(e);
+            int key = e.getKeyCode();
+            if (key == KeyEvent.VK_LEFT && ! right) {
+                left = true;
+                up = false;
+                down = false;
+            }
+            if (key == KeyEvent.VK_RIGHT && ! left) {
+                right = true;
+                up = false;
+                down = false;
+            }
+            if (key == KeyEvent.VK_UP && ! down) {
+                left = false;
+                up = true;
+                right = false;
+            }
+            if (key == KeyEvent.VK_DOWN && ! up) {
+                left = false;
+                down = true;
+                right = false;
+            }
+        }
+    }
+
 }

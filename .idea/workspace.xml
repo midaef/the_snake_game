@@ -28,8 +28,8 @@
       <file leaf-file-name="GameField.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/GameField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="216">
+              <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="33" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,8 +51,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/company/main/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/com/company/main/GameField.java" />
-        <option value="$PROJECT_DIR$/src/com/company/GameField.java" />
         <option value="$PROJECT_DIR$/src/com/company/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/com/company/GameField.java" />
       </list>
     </option>
   </component>
@@ -170,7 +170,7 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.04901961" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
@@ -222,8 +222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/GameField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state relative-caret-position="216">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="33" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
